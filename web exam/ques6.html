@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown List Count</title>
+</head>
+<body>
+  <h1>Dropdown List Count</h1>
+  
+  <select id="myDropdown">
+    <option>Item 1</option>
+    <option>Item 2</option>
+    <option>Item 3</option>
+    <option>Item 4</option>
+    <option>Item 5</option>
+  </select>
+
+  <button onclick="countItems()">Count Items</button>
+
+  <script>
+    function countItems() {
+      const dropdown = document.getElementById("myDropdown");
+      const itemCount = dropdown.options.length;
+
+      alert(`The dropdown list contains ${itemCount} items.`);
+    }
+  </script>
+</body>
+</html>
