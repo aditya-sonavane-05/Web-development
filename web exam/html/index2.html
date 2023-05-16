@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>String Search and Replace</title>
+  <script>
+    function searchAndReplace() {
+      var inputString = document.getElementById("inputString").value;
+      var searchString = document.getElementById("searchString").value;
+      var replaceString = document.getElementById("replaceString").value;
+
+      // Count the number of occurrences
+      var count = (inputString.match(new RegExp(searchString, "g")) || []).length;
+
+      // Replace the string
+      var updatedString = inputString.replace(new RegExp(searchString, "g"), replaceString);
+
+      // Display the results
+      document.getElementById("occurrenceCount").textContent = "Number of occurrences: " + count;
+      document.getElementById("updatedString").textContent = "Updated string: " + updatedString;
+    }
+  </script>
+</head>
+<body>
+  <h1>String Search and Replace</h1>
+  <label for="inputString">Input String:</label>
+  <textarea id="inputString" rows="5" cols="50"></textarea><br><br>
+
+  <label for="searchString">String to Search:</label>
+  <input type="text" id="searchString"><br><br>
+
+  <label for="replaceString">New String:</label>
+  <input type="text" id="replaceString"><br><br>
+
+  <button onclick="searchAndReplace()">Search and Replace</button><br><br>
+
+  <div id="occurrenceCount"></div>
+  <div id="updatedString"></div>
+</body>
+</html>
