@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even and Odd Numbers</title>
+    <script>
+        function displayNumbers() {
+            var inputNumbers = document.getElementById("numbers").value;
+            var numbers = inputNumbers.split(",").map(Number);
+
+            var evenNumbers = [];
+            var oddNumbers = [];
+
+            // Iterate through each number in the list
+            for (var i = 0; i < numbers.length; i++) {
+                if (numbers[i] % 2 === 0) {
+                    // Number is even
+                    evenNumbers.push(numbers[i]);
+                } else {
+                    // Number is odd
+                    oddNumbers.push(numbers[i]);
+                }
+            }
+
+            // Display even numbers
+            document.getElementById("evenNumbers").textContent = "Even Numbers: " + evenNumbers.join(", ");
+            
+            // Display odd numbers
+            document.getElementById("oddNumbers").textContent = "Odd Numbers: " + oddNumbers.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <h1>Even and Odd Numbers</h1>
+    <label for="numbers">Enter numbers (comma-separated):</label>
+    <input type="text" id="numbers">
+    <button onclick="displayNumbers()">Display</button>
+    <p id="evenNumbers"></p>
+    <p id="oddNumbers"></p>
+</body>
+</html>
